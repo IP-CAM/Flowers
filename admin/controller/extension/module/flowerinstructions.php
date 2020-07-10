@@ -1,5 +1,5 @@
 <?php
-class ControllerExtensionModulesFlowerinstructions extends Controller
+class ControllerExtensionModuleFlowerinstructions extends Controller
 {
 
 	/**
@@ -9,7 +9,7 @@ class ControllerExtensionModulesFlowerinstructions extends Controller
 	 */
 	public function index()
 	{
-		$this->load->language('extension/modules/flower_instructions');
+		$this->load->language('extension/module/flowerinstructions');
 		$this->document->setTitle($this->language->get('heading_title'));
 
 		$data['instructions'] = $this->language->get('text_instructions');
@@ -25,37 +25,38 @@ class ControllerExtensionModulesFlowerinstructions extends Controller
 		);
 
 		$data['breadcrumbs'][] = array(
-			'text' => $this->language->get('heading_title'), 'href' => $this->url->link('extension/modules/flower_instructions', 'user_token=' . $this->session->data['user_token'], true)
+			'text' => $this->language->get('heading_title'), 'href' => $this->url->link('extension/module/flowerinstructions', 'user_token=' . $this->session->data['user_token'], true)
 		);
 
-		$data['cancel'] = $this->url->link('marketplace/flower_instructions', 'user_token=' . $this->session->data['user_token'] . '&type=module', true);
+		$data['cancel'] = $this->url->link('marketplace/flowerinstructions', 'user_token=' . $this->session->data['user_token'] . '&type=module', true);
 		$data['header'] = $this->load->controller('common/header');
 		$data['column_left'] = $this->load->controller('common/column_left');
 		$data['footer'] = $this->load->controller('common/footer');
 
-		$this->response->setOutput($this->load->view('extension/modules/flower_instructions', $data));
+		$this->response->setOutput($this->load->view('extension/module/flowerinstructions', $data));
 	}
 
 	/**
 	 * install
-	 * Installation de l'extension (création de la table 'flowerinstructions')
+	 * Installation de l'extension (création de la table 'flower_instructions' et ajout de 3 entrées)
 	 * @return void
 	 */
 	public function install()
 	{
-		$this->load->model('extension/modules/flowerinstructions');
-		$this->model_extension_modules_flowerinstructions->createTable();
+		$this->load->model('extension/module/flowerinstructions');
+		$this->model_extension_module_flowerinstructions->createTable();
+		$this->model_extension_module_flowerinstructions->seedTable();
 	}
 
 
 	/**
 	 * uninstall
-	 * Désinstallation de l'extension (suppression de la table 'flowerinstructions')
+	 * Désinstallation de l'extension (suppression de la table 'flower_instructions')
 	 * @return void
 	 */
 	public function uninstall()
 	{
-		$this->load->model('extension/modules/flowerinstructions');
-		$this->model_extension_modules_flowerinstructions->dropTable();
+		$this->load->model('extension/module/flowerinstructions');
+		$this->model_extension_module_flowerinstructions->dropTable();
 	}
 }
