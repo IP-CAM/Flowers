@@ -1,11 +1,10 @@
 <?php
 class ControllerInformationInstructions extends Controller
 {
-
     public function index()
     {
         $this->language->load('information/instructions');
-        $this->load->model('information/instructions');
+        $this->load->model('catalog/instructions');
 
         $data['breadcrumbs'] = array();
 
@@ -19,7 +18,7 @@ class ControllerInformationInstructions extends Controller
             'href' => $this->url->link('common/home')
         );
 
-        $all_instructions = $this->model_information_instructions->getAllInstructions();
+        $all_instructions = $this->model_catalog_instructions->getAllInstructions();
 
         $data['all_instructions'] = array();
         foreach ($all_instructions as $instructions) {
@@ -42,6 +41,6 @@ class ControllerInformationInstructions extends Controller
         $data['footer'] = $this->load->controller('common/footer');
         $data['header'] = $this->load->controller('common/header');
 
-        $this->response->setOutput($this->load->view('information/instructions', $data));
+        $this->response->setOutput($this->load->view('information/instructions', $data));    
     }
 }

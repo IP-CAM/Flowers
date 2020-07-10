@@ -1,5 +1,5 @@
 <?php
-class ModelInformationInstructions extends Model
+class ModelCatalogInstructions extends Model
 {
     public function getAllInstructions()
     {
