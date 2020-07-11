@@ -1,9 +1,15 @@
 <?php
 class ModelCatalogInstructions extends Model
 {
+    /**
+     * Retourne toute les les entrées de la table flower_instructions.
+     *
+     * @return rows
+     */
     public function getAllInstructions()
     {
-        $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "flower_instructions ORDER BY date DESC");
+        // $query = $this->db->query("SELECT * FROM `ocvr_flower_instructions`");
+        $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "flower_instructions");
         return $query->rows;
     }
 }
