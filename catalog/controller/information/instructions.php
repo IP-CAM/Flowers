@@ -1,6 +1,11 @@
 <?php
 class ControllerInformationInstructions extends Controller
 {
+    /**
+	 * index
+	 * Envoit les données à la vue de la page qui affiche les instructions
+	 * @return void
+	 */
     public function index()
     {
         $this->language->load('information/instructions');

@@ -8,7 +8,6 @@ class ModelCatalogInstructions extends Model
      */
     public function getAllInstructions()
     {
-        // $query = $this->db->query("SELECT * FROM `ocvr_flower_instructions`");
         $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "flower_instructions");
         return $query->rows;
     }

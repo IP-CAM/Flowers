@@ -5,3 +5,5 @@
 ### Identifiant et mot de passe
 - username : master
 - mpd : D7#j#$Z#^CINk
+## Guide d'installation et d'utilisation
+[guide d'installation.pdf](https://github.com/Soushi888/Flowers/blob/master/guide%20d'installation.pdf)
