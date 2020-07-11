@@ -28,7 +28,7 @@ class ControllerInformationInstructions extends Controller
         $data['all_instructions'] = array();
         foreach ($all_instructions as $instructions) {
             $data['all_instructions'][] = array(
-                'flower' => $instructions['flower_type'],
+                'flower' => ucfirst($instructions['flower_type']),
                 'instructions' => $instructions['flower_instruction']
             );
         }
