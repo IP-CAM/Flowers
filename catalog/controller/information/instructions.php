@@ -27,7 +27,6 @@ class ControllerInformationInstructions extends Controller
                 'instructions' => $instructions['flower_instruction']
             );
         }
-        var_dump($data['all_instructions']);
 
         $this->document->setTitle($this->language->get('heading_title'));
 

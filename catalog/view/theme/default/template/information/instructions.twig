@@ -18,7 +18,7 @@
 		<div id="content" class="{{ class }}">{{ content_top }}
 			<h1>{{ heading_title }}</h1>
 
-			<table class="mx-auto" style="width: 250px;">
+			<table class="mx-auto" style="width: 100%">
 				<th style="padding-right: 65px;">{{text_flower}}</th>
 				<th style="padding-right: 65px; padding-left: 5px">{{text_instructions}}</th>
 				{% for instructions in all_instructions %}
@@ -31,7 +31,7 @@
 							{{instructions.instructions}}
 						</td>
 					</tr>
-					<tr style="height: 10px"></tr>
+					<tr style="height: 10px; border-bottom: 2px solid black"></tr>
 				{% endfor %}
 
 			</table>
